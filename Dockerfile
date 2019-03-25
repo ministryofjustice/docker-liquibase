@@ -1,4 +1,3 @@
-ARG liquibase_version=3.6.1
 FROM openjdk:8-jdk-alpine
 
 LABEL maintainer "ferrari.marco@gmail.com"
@@ -10,7 +9,7 @@ RUN apk add --update \
 
 ENV PATH $PATH:/liquibase
 
-ENV LIQUIBASE_VERSION $liquibase_version
+ENV LIQUIBASE_VERSION=3.5.0
 
 RUN mkdir -p /liquibase \
     && curl -L https://github.com/liquibase/liquibase/releases/download/liquibase-parent-${LIQUIBASE_VERSION}/liquibase-${LIQUIBASE_VERSION}-bin.tar.gz \
